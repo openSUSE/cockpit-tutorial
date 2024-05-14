@@ -1,4 +1,4 @@
-# Advance patternfly and cockpit
+# Advanced cockpit
 
 So far our application has grown from a just a string on the page to now a more fleshed out semi passable view. Lets go a step further and make it more useful. Currently we are reading our data from `/etc/hostname` however that isn't graunteed to have data nor is graunteed to be the actual hostname on a system using systemd. Lets decouple oursevels from files and instead using dbus and use that to get a little more information
 

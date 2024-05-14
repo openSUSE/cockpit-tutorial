@@ -53,7 +53,7 @@ return (
     );
 ```
 
-We we deal with JSX direct vairable access is done via `{}` in the previous return statement ```return <p>{`hostname: ${hostname}`}</p>;``` we used `${}` as we were dealing with a templete string. Lets take a look at how out component will look like now. If you used the `make devel-install` command you will only need to run `npm run build`.
+We we deal with JSX we work with javascript inside of the html using `{}` in the previous return statement ```return <p>{`hostname: ${hostname}`}</p>;``` we used `${}` as we were dealing with a templete string. Lets take a look at how out component will look like now. If you used the `make devel-install` command you will only need to run `npm run build`.
 
 
 ![](./images/now_with_patternfly.png)
