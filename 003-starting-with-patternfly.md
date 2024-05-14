@@ -69,11 +69,4 @@ cockpit.file("/etc/hostname")
     });
 ```
 
-
-
-```sh
-$ dbus-send --system --print-reply \
-    --dest=org.freedesktop.hostname1 \
-    /org/freedesktop/hostname1 \
-    org.freedesktop.hostname1.Describe
-```
+Now, we use cockpits internal api to read the file and watch for chanages. The benfits to this approach include, no extrenal depencies. We get the content of the `/etc/hostname` as it changes amongst many other benfits. We'll end of here and look into more advance uses of the cockpit api, and make a "better" hostname application along with.
