@@ -53,7 +53,7 @@ return (
     );
 ```
 
-We we deal with JSX direct vairable access is done via `{}` in the previous return statement ```return <p>{`hostname: ${hostname}`}</p>;``` we used `${}` as we were dealing with a templete string. Lets take a look at how out component will look like now. If you used the `make devel-install` command you will only need to run `npm run build`.
+We we deal with JSX we work with javascript inside of the html using `{}` in the previous return statement ```return <p>{`hostname: ${hostname}`}</p>;``` we used `${}` as we were dealing with a templete string. Lets take a look at how out component will look like now. If you used the `make devel-install` command you will only need to run `npm run build`.
 
 
 ![](./images/now_with_patternfly.png)
@@ -69,4 +69,29 @@ cockpit.file("/etc/hostname")
     });
 ```
 
-Now, we use cockpits internal api to read the file and watch for chanages. The benfits to this approach include, no extrenal depencies. We get the content of the `/etc/hostname` as it changes amongst many other benfits. We'll end of here and look into more advance uses of the cockpit api, and make a "better" hostname application along with.
+Now, we use cockpits internal api to read the file and watch for chanages. The benfits to this approach include, no extrenal depencies. We get the content of the `/etc/hostname` as it changes amongst many other benfits. We'll end of here and look into more advance uses of the cockpit api, and make a "better" hostname application along with. At this point your code should look like.
+
+```jsx
+import React from "react";
+import cockpit from "cockpit";
+
+export const Application = () => {
+    const [hostname, SetHostname] = React.useState("");
+
+    React.useEffect(() => {
+       cockpit.file("/etc/hostname")
+            .watch((content) => {
+                if (content) {
+                    SetHostname(content);
+                }
+            });
+    }, []);
+
+    return (
+        <Card>
+            <CardTitle>Hostname</CardTitle>
+            <CardBody>running on {hostname}</CardBody>
+        </Card>
+    );
+};
+```
