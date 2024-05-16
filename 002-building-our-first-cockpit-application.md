@@ -59,11 +59,17 @@ export const Application = () => {
 };
 ```
 
-Now lets test out our code. To start with, lets by build our application. `npm run build`. This will build our application. Next lets install the application. Here we have two options. One is to install it with root privilleges and avaliable too all users. Or we can install without root privilleges but only avaliable to our the current user.
+Now lets test out our code. To start with, lets by build our application:
+
+```sh
+$ npm run build
+```
+
+This will build our application. Next let's install the application. Here we have two options. One is to install it with root privilleges and avaliable too all users. Or we can install without root privilleges but only avaliable to our the current user.
 
 With root privilleges:
 ```sh
-$# make install
+$ make install
 ```
 
 Without root privivleges:
@@ -73,7 +79,7 @@ $ make devel-install
 
 I would recomend using the non-root privilleges option as it allows for faster development. After choosing your method and logining in with the appropriate user. You should see something similar to this page. 
 
-<sub>note: if you see a no hostname check if /etc/hostname is empty, most recent versions of tumbleweed do not set /etc/hostname and leave it as an empty file</sub>
+<sub>note: if you see no hostname check if /etc/hostname is empty, most recent versions of Tumbleweed do not set /etc/hostname and leave it as an empty file</sub>
 
 ![](./images/basic_application.png)
 
